@@ -6,7 +6,7 @@ package Modelos;
  */
     
 public class Estudiante extends Solicitante{
-    private static final byte LENGTH = 7;
+    private static final byte LENGTH = 7; // el la longitud del numero de cuenta
     private String planEstudios;
     
     public Estudiante(Nombre nombre, Correo correo, String numero, String planEstudios) {
@@ -26,7 +26,8 @@ public class Estudiante extends Solicitante{
     @Override
     public void setNumero(String numero) {
         if(numero.length() != LENGTH && numero.matches("[1-9]+"))
-            return;
+            return; // aqui vala validacion
+        super.numero = numero;
         //super.setNumero(numero); 
     }
 
@@ -35,5 +36,27 @@ public class Estudiante extends Solicitante{
         return super.toString() + planEstudios;
     }
     
+    /*
     
+    
+    
+    dsadddddddddddddddddddddd
+    
+    das
+    d
+    as
+    d
+    sa
+    d
+    
+    sa
+    d
+    
+    as
+    ds
+    
+    adas
+    
+    
+    */
 }
