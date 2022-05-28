@@ -1,8 +1,7 @@
 /*
 Validar los seter para que se lance una excepción
 
-*/
-
+ */
 package Modelos;
 
 /**
@@ -10,6 +9,7 @@ package Modelos;
  * @author EduardoCGarcia
  */
 public class Nombre {
+//Ya validado para lanzar una excepcion
     private String nombres;
     private String primerApellido;
     private boolean tipo;/*0 = AAN    1 = NAA*/
@@ -24,9 +24,12 @@ public class Nombre {
         return nombres;
     }
 
-    public void setNombres(String nombres) {
-        if(!nombres.matches("[a-zA-Z\s]+") && nombres.startsWith(" ") || nombres.length() == 0 )
-            return;
+    public void setNombres(String nombres) throws Exception {
+        //validado para lanzar una excepcion
+        if (!nombres.matches("[a-zA-Z\s]+") && nombres.startsWith(" ") || nombres.length() == 0) {
+            Exception e = new Exception();
+            throw e;
+        }
         this.nombres = nombres;
     }
 
@@ -34,8 +37,9 @@ public class Nombre {
         return primerApellido;
     }
 
-    public void setPrimerApellido(String primerApellido)  throws Exception{
-        if(!primerApellido.matches("[a-zA-Z\s]+") || primerApellido.startsWith(" ") || primerApellido.length() == 0){
+    public void setPrimerApellido(String primerApellido) throws Exception {
+        //validado para lanzar una excepcion
+        if (!primerApellido.matches("[a-zA-Z\s]+") || primerApellido.startsWith(" ") || primerApellido.length() == 0) {
             Exception e = new Exception();
             throw e;
         }
@@ -50,16 +54,14 @@ public class Nombre {
         this.tipo = tipo;
     }
 
-    
-    
     @Override
     public String toString() {
-        if (!this.tipo) 
-            return  primerApellido + " " +nombres;
-        else
-            return  nombres + " " + primerApellido;
-        
-        
+        if (!this.tipo) {
+            return primerApellido + " " + nombres;
+        } else {
+            return nombres + " " + primerApellido;
+        }
+
     }
-    
+
 }

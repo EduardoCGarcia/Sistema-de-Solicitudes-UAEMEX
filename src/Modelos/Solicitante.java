@@ -18,7 +18,7 @@ public abstract class Solicitante {
         return nombre;
     }
 
-    public void setNombre(Nombre nombre) {
+    public void setNombre(Nombre nombre) throws Exception{
         this.nombre = nombre;
     }
 
@@ -26,7 +26,7 @@ public abstract class Solicitante {
         return correo;
     }
 
-    public void setCorreo(Correo correo) {
+    public void setCorreo(Correo correo) throws Exception{
         this.correo = correo;
     }
 
@@ -34,7 +34,7 @@ public abstract class Solicitante {
         return numero;
     }
 
-    public abstract void setNumero(String numero);
+    public abstract void setNumero(String numero) throws Exception;
 
     @Override
     public String toString() {
