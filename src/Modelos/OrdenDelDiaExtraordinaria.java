@@ -11,6 +11,7 @@ package Modelos;
 public class OrdenDelDiaExtraordinaria extends OrdenDelDia {
 
     public OrdenDelDiaExtraordinaria() {
+        super();
     }
 
     public OrdenDelDiaExtraordinaria(String listaDePresentes) {
