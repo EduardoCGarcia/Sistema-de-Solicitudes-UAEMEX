@@ -1,6 +1,7 @@
 package Modelos;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  *
@@ -8,6 +9,9 @@ import java.time.LocalDate;
  */
 public abstract class Convocatoria {
     private LocalDate fecha;
+    private LocalDate fecha_sesion;
+    private LocalTime hora_primera;
+    private LocalTime hora_segunda;
     private Consejo consejo;
     private Lugar lugar;
     private OrdenDelDia ordenDelDia;
@@ -30,6 +34,32 @@ public abstract class Convocatoria {
         this.complemento = complemento;
         this.parrafoFinal = parrafoFinal;
     }
+
+    public LocalDate getFecha_sesion() {
+        return fecha_sesion;
+    }
+
+    public LocalTime getHora_primera() {
+        return hora_primera;
+    }
+
+    public LocalTime getHora_segunda() {
+        return hora_segunda;
+    }
+
+    public void setFecha_sesion(LocalDate fecha_sesion) {
+        this.fecha_sesion = fecha_sesion;
+    }
+
+    public void setHora_primera(LocalTime hora_primera) {
+        this.hora_primera = hora_primera;
+    }
+
+    public void setHora_segunda(LocalTime hora_segunda) {
+        this.hora_segunda = hora_segunda;
+    }
+    
+    
 
     public LocalDate getFecha() {
         return fecha;

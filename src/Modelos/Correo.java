@@ -16,7 +16,7 @@ public class Correo {
     }
 
     public Correo(String dir) throws Exception {
-        setDir(dir);
+        this.setDir(dir);
     }
 
     public String getDir() {

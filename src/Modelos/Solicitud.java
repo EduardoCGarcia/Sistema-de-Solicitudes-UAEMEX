@@ -11,15 +11,26 @@ public class Solicitud {
     private Solicitante solitante;
     private Date fechaDeSolicitud;
     private String estatus;
+    private Folio folio;
 
     public Solicitud(String asunto, Solicitante solitante, Date fechaDeSolicitud, String estatus) {
         this.asunto = asunto;
         this.solitante = solitante;
         this.fechaDeSolicitud = fechaDeSolicitud;
         this.estatus = estatus;
+        
     }
 
     public Solicitud() {
+        this.folio = new Folio();
+    }
+
+    public Folio getFolio() {
+        return folio;
+    }
+
+    public void setFolio(Folio folio) {
+        this.folio = folio;
     }
     
     
