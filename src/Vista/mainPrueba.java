@@ -5,6 +5,7 @@
 package Vista;
 
 import Modelos.Correo;
+import Vista.Paneles.NuevaSolicitudPanel;
 
 /**
  *
@@ -14,8 +15,7 @@ public class mainPrueba {
     
     public static void main(String[] args) throws Exception {
         
-        
-        Correo c = new Correo();
+       Correo c = new Correo();
         
         c.setDir("d@alumno.uaemex.mx");
         System.out.println(c.getDir());

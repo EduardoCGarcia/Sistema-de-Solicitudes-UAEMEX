@@ -7,6 +7,7 @@ package Vista;
 import Modelos.Nombre;
 import Modelos.NombreLatino;
 import Utilerias.FondoImagen;
+import Vista.Paneles.NuevaSolicitudPanel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -116,7 +117,8 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        NuevaSolicitudPanel solicitud = new NuevaSolicitudPanel();
+        solicitud.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
