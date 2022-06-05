@@ -1,7 +1,6 @@
 package Modelos;
 
-import java.util.Date;
-
+import java.time.LocalDate;
 /**
  *
  * @author EduardoCGarcia
@@ -9,15 +8,16 @@ import java.util.Date;
 public class Solicitud {
     private String asunto;
     private Solicitante solitante;
-    private Date fechaDeSolicitud;
+    private LocalDate fechaDeSolicitud;
     private String estatus;
     private Folio folio;
 
-    public Solicitud(String asunto, Solicitante solitante, Date fechaDeSolicitud, String estatus) {
+    public Solicitud(String asunto, Solicitante solitante, Folio folio) {
         this.asunto = asunto;
         this.solitante = solitante;
-        this.fechaDeSolicitud = fechaDeSolicitud;
-        this.estatus = estatus;
+        this.folio = folio;
+        this.estatus = "Pendiente";
+        this.setFechaDeSolicitud();
         
     }
 
@@ -29,11 +29,9 @@ public class Solicitud {
         return folio;
     }
 
-    public void setFolio(Folio folio) {
-        this.folio = folio;
+    public void setFolio() {
+        String cad = "";
     }
-    
-    
     
     public String getAsunto() {
         return asunto;
@@ -51,12 +49,12 @@ public class Solicitud {
         this.solitante = solitante;
     }
 
-    public Date getFechaDeSolicitud() {
+    public LocalDate getFechaDeSolicitud() {
         return fechaDeSolicitud;
     }
 
-    public void setFechaDeSolicitud(Date fechaDeSolicitud) {
-        this.fechaDeSolicitud = fechaDeSolicitud;
+    public void setFechaDeSolicitud() {
+        this.fechaDeSolicitud = LocalDate.now();
     }
 
     public String getEstatus() {

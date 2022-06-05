@@ -68,6 +68,11 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
                 btnSalirMouseExited(evt);
             }
         });
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
 
         btnSolicitudRegistradas.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnSolicitudRegistradas.setForeground(new java.awt.Color(255, 255, 255));
@@ -258,6 +263,10 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
     private void btnNuevaSolicitudMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevaSolicitudMouseExited
         btnNuevaSolicitud.setForeground(Color.WHITE);
     }//GEN-LAST:event_btnNuevaSolicitudMouseExited
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
