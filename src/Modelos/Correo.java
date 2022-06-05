@@ -1,7 +1,3 @@
-/*
-Validar de la misma forma que en las clase Nombre
-
- */
 package Modelos;
 
 /**
@@ -16,7 +12,7 @@ public class Correo {
     }
 
     public Correo(String dir) throws Exception {
-        setDir(dir);
+        this.setDir(dir);
     }
 
     public String getDir() {
@@ -30,6 +26,9 @@ public class Correo {
                 || dir.endsWith(".") || dir.endsWith("@")) {
             Exception e = new Exception();
             throw e;
+        }
+        if (dir.matches("[A-Za-z0-9+_.-]+@(.+)$")) {
+            
         }
 
         this.dir = dir;

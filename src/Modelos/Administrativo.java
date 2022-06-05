@@ -5,6 +5,7 @@ package Modelos;
  * @author EduardoCGarcia
  */
 public class Administrativo extends Empleado{
+    private String claveIssemym;
  //Ya validado para lanzar una excepcion
     private static final byte LENGTH = 8;
     
@@ -12,6 +13,7 @@ public class Administrativo extends Empleado{
         super(nombre, correo);
         this.setNumero(numero);
     }
+
 
     @Override
     public void setNumero(String numero) throws Exception{
@@ -28,6 +30,16 @@ public class Administrativo extends Empleado{
     public String toString() {
         return super.toString();
     }
+
+    public String getClaveIssemym() {
+        return claveIssemym;
+    }
+
+    public void setClaveIssemym(String claveIssemym) {
+        this.claveIssemym = claveIssemym;
+    }
+    
+    
 
    
     
