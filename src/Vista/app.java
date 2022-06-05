@@ -1,9 +1,6 @@
 package Vista;
 
-<<<<<<< HEAD
-=======
 import javax.swing.JPanel;
->>>>>>> a66a8f5e3e64e8346b5cc9c400bc78d95556f93f
 
 /**
  *
