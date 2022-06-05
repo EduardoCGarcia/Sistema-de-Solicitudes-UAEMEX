@@ -4,15 +4,20 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/Solicitante.java</file>
+            <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/Paneles/LoggedSolicitantePanel.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/Correo.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/Nombre.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/Paneles/Login.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/GeneralLogin.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/Profesor.java</file>
+            <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/Paneles/NuevaSolicitudPanel.java</file>
+            <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/Paneles/RegistroEmpleado.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Utilerias/FondoNoAjustable.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/Administrativo.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/NombreLatino.java</file>
+            <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/Paneles/RegistroEstudiante.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/Estudiante.java</file>
+            <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/Paneles/LoggedAdminPanel.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/mainPrueba.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Modelos/Empleado.java</file>
             <file>file:/C:/Users/Gonzalo%20CH/Documents/NetBeansProjects/Sistema-de-Solicitudes-UAEMEX/src/Vista/app.java</file>

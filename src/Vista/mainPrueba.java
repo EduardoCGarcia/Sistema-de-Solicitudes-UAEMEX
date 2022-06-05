@@ -17,7 +17,7 @@ public class mainPrueba {
 //            System.out.println("Correo valido");
 //        }
           JFrame j = new JFrame();
-          Vista.Paneles.LoggedAdminPanel log = new Vista.Paneles.LoggedAdminPanel();
+          Vista.Paneles.LoggedSolicitantePanel log = new Vista.Paneles.LoggedSolicitantePanel();
           log.setVisible(true);
           j.setBounds(0, 0, 1200, 1400);
           j.add(log);
