@@ -29,7 +29,7 @@ public class Nombre implements Serializable{
     public void setNombres(String nombres) throws Exception {
         //validado para lanzar una excepcion
         if (!nombres.matches("[a-zA-Z\s]+") && nombres.startsWith(" ") || nombres.length() == 0) {
-            Exception e = new Exception();
+            Exception e = new Exception("El nombre no es valido");
             throw e;
         }
         this.nombres = nombres;
@@ -42,7 +42,7 @@ public class Nombre implements Serializable{
     public void setPrimerApellido(String primerApellido) throws Exception {
         //validado para lanzar una excepcion
         if (!primerApellido.matches("[a-zA-Z\s]+") || primerApellido.startsWith(" ") || primerApellido.length() == 0) {
-            Exception e = new Exception();
+            Exception e = new Exception("El apellido no es valido");
             throw e;
         }
         this.primerApellido = primerApellido;

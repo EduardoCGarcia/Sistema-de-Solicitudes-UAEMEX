@@ -127,7 +127,6 @@ public class TipoSolicitanteRegistro extends javax.swing.JDialog {
         RegistroEstudiante n = new RegistroEstudiante(app.app, true);
         n.setVisible(true);
         this.dispose();
-        
     }//GEN-LAST:event_btnAlumnoActionPerformed
 
 

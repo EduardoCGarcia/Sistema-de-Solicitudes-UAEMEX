@@ -23,17 +23,12 @@ public class Correo implements Serializable{
 
     public void setDir(String dir) throws Exception {
         //validado para lanzar una excepcion
-        if (dir == null || dir.length() < 3 || !(Character.isAlphabetic(dir.charAt(0)) || Character.isDigit(dir.charAt(0)))
-                || !dir.endsWith(".uaemex.mx") || !contieneArr(dir) || dir.matches("[^!#$%&/()=¨}{]") || !dir.contains(".")
-                || dir.endsWith(".") || dir.endsWith("@")) {
-            Exception e = new Exception();
+        if (!dir.matches("[A-Za-z0-9+_.-]+@(alumno.uaemex.mx|profesor.uaemex.mx|admin.uaemex.mx)$")) {
+            Exception e = new Exception("La dirección de correo no es valida");
             throw e;
         }
-        if (dir.matches("[A-Za-z0-9+_.-]+@(.+)$")) {
-            
-        }
-
-        this.dir = dir;
+            this.dir = dir;
+        
     }
 
     static boolean contieneArr(String cad) {

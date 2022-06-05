@@ -1,5 +1,6 @@
 package Vista.Paneles;
 
+import Utilerias.GUITools;
 import java.awt.Color;
 
 /**
@@ -177,7 +178,7 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
                 .addComponent(btnConsultarEstatus)
                 .addGap(55, 55, 55)
                 .addComponent(btnSolicitudRegistradas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addComponent(btnEmitirOficio)
                 .addGap(41, 41, 41)
                 .addComponent(btnSalir)
@@ -190,7 +191,7 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
         ContenedorDinamico.setLayout(ContenedorDinamicoLayout);
         ContenedorDinamicoLayout.setHorizontalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 799, Short.MAX_VALUE)
+            .addGap(0, 536, Short.MAX_VALUE)
         );
         ContenedorDinamicoLayout.setVerticalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +247,8 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSalirMouseExited
 
     private void btnNuevaSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaSolicitudActionPerformed
-        // TODO add your handling code here:
+        NuevaSolicitudPanel s = new NuevaSolicitudPanel();
+        GUITools.panelIntoPanel(ContenedorDinamico, s);
     }//GEN-LAST:event_btnNuevaSolicitudActionPerformed
 
     private void btnNuevaSolicitudMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevaSolicitudMouseEntered

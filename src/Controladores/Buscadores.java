@@ -1,5 +1,6 @@
 package Controladores;
 
+import Modelos.Administrativo;
 import Modelos.Correo;
 import Modelos.Estudiante;
 import Modelos.Profesor;
@@ -35,9 +36,25 @@ public class Buscadores {
         }
         return null;
     }
+    public static Administrativo findAdmin(String numero,String correo){
+        for (Administrativo e : app.secretarias) {
+            if(e.getNumero().equals(numero) || e.getCorreo().equals(correo)){
+                return e;
+            }
+        }
+        return null;
+    }
     
     public static Profesor findTeacher(String correo){
         for (Profesor e : app.profesores) {
+            if(e.getCorreo().equals(correo)){
+                return e;
+            }
+        }
+        return null;
+    }
+    public static Administrativo findAdmin(String correo){
+        for (Administrativo e : app.secretarias) {
             if(e.getCorreo().equals(correo)){
                 return e;
             }
@@ -53,7 +70,14 @@ public class Buscadores {
         return false;
     }
     public static boolean existTeacher(String numero,String correo){
-        Estudiante buscado = findStudent(numero,correo);
+        Profesor buscado = findTeacher(numero,correo);
+        if(buscado != null){
+            return true;
+        }
+        return false;
+    }
+    public static boolean existAdmin(String numero,String correo){
+        Administrativo buscado = findAdmin(numero,correo);
         if(buscado != null){
             return true;
         }
@@ -69,6 +93,13 @@ public class Buscadores {
     }
     public static boolean loginTeacher(String correo, String password){
         Profesor buscado = findTeacher(correo);
+        if(buscado != null){
+            return (buscado.getPassword().equals(password)) ? true :false;
+        }
+        return false;
+    }
+    public static boolean loginAdmin(String correo, String password){
+        Administrativo buscado = findAdmin(correo);
         if(buscado != null){
             return (buscado.getPassword().equals(password)) ? true :false;
         }

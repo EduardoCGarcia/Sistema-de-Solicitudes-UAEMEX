@@ -279,13 +279,13 @@ public class RegistroAdministativo extends javax.swing.JDialog {
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         try {
-            RegisterController.teacherRegister(
+            RegisterController.adminRegister(
                     new Nombre(txtNombre.getText(), txtApellido.getText(), true),
                     txtCorreo.getText(),
                     txtNumCuenta.getText(),
                     String.copyValueOf(txtPassword.getPassword()));
         } catch (Exception ex) {
-            System.out.println("hubo un error");
+            System.out.println("hubo un error 111");
         }
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 

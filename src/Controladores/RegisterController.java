@@ -1,5 +1,6 @@
 package Controladores;
 
+import Modelos.Administrativo;
 import Modelos.Correo;
 import Modelos.Estudiante;
 import Modelos.Nombre;
@@ -17,18 +18,20 @@ public class RegisterController {
         if (numero.length() == 7) {
             if (!Buscadores.existStudent(numero,correo)) {
                 try {
+                    System.out.println("Estudiante pruba");
                     Estudiante e = new Estudiante(
                             nombre,
                             new Correo(correo),
                             numero,
                             password,
                             planEstudios);
+                    
                     app.estudiantes.add(e);
                     Archivos.guardarArchivo("estudiantes.dat", app.estudiantes);
-                    System.out.println("Estudiante guardado");
+                    JOptionPane.showMessageDialog(null, "Estudiante guardado");
 
                 } catch (Exception ex) {
-                    System.out.println("hubo un error");
+                    System.out.println(ex);
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "El correo y/o numero de cuenta ya han sido utilizados anteriormente.\nNo se puede crear la cuenta");
@@ -49,16 +52,39 @@ public class RegisterController {
                             password);
                     app.profesores.add(p);
                     Archivos.guardarArchivo("profesores.dat", app.profesores);
-                    System.out.println("Profesor guardado");
+                    JOptionPane.showMessageDialog(null, "Profesor guardado");
 
                 } catch (Exception ex) {
-                    System.out.println("hubo un error");
+                    System.out.println(ex);
                 }
             }else{
                 JOptionPane.showMessageDialog(null, "El correo y/o numero de cuenta ya han sido utilizados anteriormente.\nNo se puede crear la cuenta");
             }
         } else {
             JOptionPane.showMessageDialog(null, "El numero de cuenta debe contener 5 digitos");
+        }
+    }
+    public static void adminRegister(Nombre nombre,String correo,String numero,String password){
+        if (numero.length() == 8) {
+            if (!Buscadores.existAdmin(numero,correo)) {
+                try {
+                    Administrativo a = new Administrativo(
+                            nombre,
+                            new Correo(correo),
+                            numero,
+                            password);
+                    app.secretarias.add(a);
+                    Archivos.guardarArchivo("secretarias.dat", app.secretarias);
+                    JOptionPane.showMessageDialog(null, "Administrativo guardado");
+
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "El correo y/o numero de cuenta ya han sido utilizados anteriormente.\nNo se puede crear la cuenta");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "El numero de cuenta debe contener 8 digitos");
         }
     }
 
