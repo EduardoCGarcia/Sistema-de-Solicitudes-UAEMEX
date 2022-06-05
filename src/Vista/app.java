@@ -6,7 +6,7 @@ package Vista;
  */
 public class app {
     public static void main(String[] args) {
-        Main app = new Main();
+        GeneralLogin app = new GeneralLogin();
         app.setVisible(true);
     }
 }

@@ -12,11 +12,18 @@ import javax.swing.JPanel;
 public class FondoNoAjustable extends JPanel {
 
     private Image imagen;
-    private String ruta;
+    private String ruta; 
 
+    public FondoNoAjustable() {
+    }
+
+    public FondoNoAjustable(String nombreArchivo) {
+        this.ruta = nombreArchivo;
+    }
+    
     @Override
     public void paint(Graphics g) {
-        imagen = new ImageIcon(getClass().getResource("/imagenes/" + ruta)).getImage();
+        imagen = new ImageIcon(getClass().getResource("/images/" + ruta)).getImage();
         g.drawImage(imagen, 0, 0,getWidth(),450, this);
         setOpaque(false);
         super.paint(g);
