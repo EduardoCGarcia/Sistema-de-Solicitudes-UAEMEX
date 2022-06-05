@@ -22,8 +22,8 @@ public class FondoImagen extends JPanel {
     public FondoImagen() {
     }
 
-    public FondoImagen(String nombreArchivo) {
-        this.ruta = nombreArchivo;
+    public FondoImagen(String ruta) {
+        this.ruta = ruta;
     }
     
     

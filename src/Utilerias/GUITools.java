@@ -98,7 +98,7 @@ public class GUITools {
 //    
     public static void panelIntoPanel(JPanel padre,JPanel hijo){
         hijo.setBounds(0,0,padre.getWidth(),padre.getHeight());//definir tamaño y posicion del hijo
-        hijo.setBackground(Color.red);
+        //hijo.setBackground(Color.red);
         padre.removeAll();
         padre.add(hijo);
         padre.revalidate();
