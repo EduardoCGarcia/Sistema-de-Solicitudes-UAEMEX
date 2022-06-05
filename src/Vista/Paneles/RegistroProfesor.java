@@ -1,41 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package Vista.Paneles;
 
-import Controladores.Buscadores;
 import Controladores.RegisterController;
-import Modelos.Correo;
-import Modelos.Estudiante;
 import Modelos.Nombre;
-import Modelos.Solicitante;
-import Utilerias.Archivos;
-import Vista.app;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
  *
  * @author EduardoCGarcia
  */
-public class RegistroEstudiante extends javax.swing.JDialog {
+public class RegistroProfesor extends javax.swing.JDialog {
 
     /**
-     * Creates new form RegistroEstudiante
+     * Creates new form RegistroEmpleado
      */
-    public RegistroEstudiante(java.awt.Frame parent, boolean modal) {
+    public RegistroProfesor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         deshabilitarBotonRegistrar();
     }
-
+    
     public void deshabilitarBotonRegistrar() {
         if (txtCorreo.getText().isBlank() || txtNombre.getText().isBlank() || txtApellido.getText().isBlank()
                 || txtNumCuenta.getText().isBlank() || txtPassword.getText().isBlank()) {
             btnRegistrarse.setEnabled(false);
-        } else if (!txtCorreo.getText().isBlank()) {
+        } else {
             btnRegistrarse.setEnabled(true);
         }
     }
@@ -53,19 +40,17 @@ public class RegistroEstudiante extends javax.swing.JDialog {
         lblNombre = new javax.swing.JLabel();
         lblCorreo = new javax.swing.JLabel();
         lblCuenta = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
+        lblContraseña = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
         txtNumCuenta = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
         btnRegistrarse = new javax.swing.JButton();
-        lblPlanEstudios = new javax.swing.JLabel();
-        cbxPlanEstudios = new javax.swing.JComboBox<>();
+        panelEncabezado = new javax.swing.JPanel();
+        lblEncabezado = new javax.swing.JLabel();
+        panelPiedepag = new javax.swing.JPanel();
         lblApellido = new javax.swing.JLabel();
         txtApellido = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -73,15 +58,20 @@ public class RegistroEstudiante extends javax.swing.JDialog {
         lblNombre.setText("Nombre:");
 
         lblCorreo.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblCorreo.setText("Correo institucional");
+        lblCorreo.setText("Correo institucional:");
 
         lblCuenta.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblCuenta.setText("Numero de cuenta:");
 
-        lblPassword.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblPassword.setText("Contraseña:");
+        lblContraseña.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblContraseña.setText("Contraseña:");
 
         txtNombre.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtNombreKeyReleased(evt);
@@ -122,11 +112,44 @@ public class RegistroEstudiante extends javax.swing.JDialog {
             }
         });
 
-        lblPlanEstudios.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblPlanEstudios.setText("Plan de Estudios:");
+        panelEncabezado.setBackground(new java.awt.Color(26, 104, 53));
+        panelEncabezado.setForeground(new java.awt.Color(26, 104, 53));
 
-        cbxPlanEstudios.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        cbxPlanEstudios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "F2", "F3", "F19" }));
+        lblEncabezado.setBackground(new java.awt.Color(255, 255, 255));
+        lblEncabezado.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblEncabezado.setForeground(new java.awt.Color(255, 255, 255));
+        lblEncabezado.setText("Registro de empleado");
+
+        javax.swing.GroupLayout panelEncabezadoLayout = new javax.swing.GroupLayout(panelEncabezado);
+        panelEncabezado.setLayout(panelEncabezadoLayout);
+        panelEncabezadoLayout.setHorizontalGroup(
+            panelEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEncabezadoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66))
+        );
+        panelEncabezadoLayout.setVerticalGroup(
+            panelEncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEncabezadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panelPiedepag.setBackground(new java.awt.Color(26, 104, 53));
+        panelPiedepag.setForeground(new java.awt.Color(26, 104, 53));
+
+        javax.swing.GroupLayout panelPiedepagLayout = new javax.swing.GroupLayout(panelPiedepag);
+        panelPiedepag.setLayout(panelPiedepagLayout);
+        panelPiedepagLayout.setHorizontalGroup(
+            panelPiedepagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        panelPiedepagLayout.setVerticalGroup(
+            panelPiedepagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 55, Short.MAX_VALUE)
+        );
 
         lblApellido.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblApellido.setText("Apellido:");
@@ -138,97 +161,55 @@ public class RegistroEstudiante extends javax.swing.JDialog {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(26, 104, 53));
-        jPanel1.setForeground(new java.awt.Color(26, 104, 53));
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Registro de estudiante");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel2.setBackground(new java.awt.Color(26, 104, 53));
-        jPanel2.setForeground(new java.awt.Color(26, 104, 53));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 55, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout ContenedorLayout = new javax.swing.GroupLayout(Contenedor);
         Contenedor.setLayout(ContenedorLayout);
         ContenedorLayout.setHorizontalGroup(
             ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(ContenedorLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(ContenedorLayout.createSequentialGroup()
-                            .addComponent(lblApellido)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtApellido))
-                        .addGroup(ContenedorLayout.createSequentialGroup()
-                            .addComponent(lblPlanEstudios)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(cbxPlanEstudios, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(ContenedorLayout.createSequentialGroup()
-                            .addComponent(lblPassword)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtPassword))
-                        .addGroup(ContenedorLayout.createSequentialGroup()
-                            .addComponent(lblCuenta)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNumCuenta))
-                        .addGroup(ContenedorLayout.createSequentialGroup()
-                            .addComponent(lblCorreo)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtCorreo))
-                        .addGroup(ContenedorLayout.createSequentialGroup()
-                            .addComponent(lblNombre)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ContenedorLayout.createSequentialGroup()
-                        .addGap(135, 135, 135)
-                        .addComponent(btnRegistrarse)))
-                .addContainerGap(7, Short.MAX_VALUE))
+                        .addGap(154, 154, 154)
+                        .addComponent(btnRegistrarse))
+                    .addGroup(ContenedorLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(ContenedorLayout.createSequentialGroup()
+                                .addComponent(lblApellido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtApellido))
+                            .addGroup(ContenedorLayout.createSequentialGroup()
+                                .addComponent(lblContraseña)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtPassword))
+                            .addGroup(ContenedorLayout.createSequentialGroup()
+                                .addComponent(lblCuenta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtNumCuenta))
+                            .addGroup(ContenedorLayout.createSequentialGroup()
+                                .addComponent(lblCorreo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtCorreo))
+                            .addGroup(ContenedorLayout.createSequentialGroup()
+                                .addComponent(lblNombre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panelEncabezado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPiedepag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ContenedorLayout.setVerticalGroup(
             ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContenedorLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(panelEncabezado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(16, 16, 16)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblApellido)
                     .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCorreo)
                     .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -236,18 +217,14 @@ public class RegistroEstudiante extends javax.swing.JDialog {
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCuenta)
                     .addComponent(txtNumCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
+                .addGap(18, 18, 18)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPlanEstudios)
-                    .addComponent(cbxPlanEstudios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPassword)
+                    .addComponent(lblContraseña)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarse)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(42, 42, 42)
+                .addComponent(panelPiedepag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -268,31 +245,13 @@ public class RegistroEstudiante extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
 
-    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
-        try {
-            if(!txtCorreo.getText().endsWith("@estudiante.uaemex.mx")){
-                Exception e = new Exception("El debe ser de tipo estudiante");
-                throw e;
-            }
-            RegisterController.studentRegister(
-                    new Nombre(txtNombre.getText(), txtApellido.getText(), true),
-                    txtCorreo.getText(),
-                    txtNumCuenta.getText(),
-                    String.copyValueOf(txtPassword.getPassword()),
-                    (String) cbxPlanEstudios.getSelectedItem());
-        } catch (Exception ex) {
-            System.out.println("hubo un error");
-        }
-
-    }//GEN-LAST:event_btnRegistrarseActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void txtNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyReleased
         deshabilitarBotonRegistrar();
     }//GEN-LAST:event_txtNombreKeyReleased
-
-    private void txtApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyReleased
-        deshabilitarBotonRegistrar();
-    }//GEN-LAST:event_txtApellidoKeyReleased
 
     private void txtCorreoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyReleased
         deshabilitarBotonRegistrar();
@@ -306,20 +265,38 @@ public class RegistroEstudiante extends javax.swing.JDialog {
         deshabilitarBotonRegistrar();
     }//GEN-LAST:event_txtPasswordKeyReleased
 
+    private void txtApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyReleased
+        deshabilitarBotonRegistrar();
+    }//GEN-LAST:event_txtApellidoKeyReleased
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        try {
+            if(!txtCorreo.getText().endsWith("@profesor.uaemex.mx")){
+                Exception e = new Exception("El debe ser de tipo profesor");
+                throw e;
+            }
+            RegisterController.teacherRegister(
+                    new Nombre(txtNombre.getText(), txtApellido.getText(), true),
+                    txtCorreo.getText(),
+                    txtNumCuenta.getText(),
+                    String.copyValueOf(txtPassword.getPassword()));
+        } catch (Exception ex) {
+            System.out.println("hubo un error");
+        }
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Contenedor;
     private javax.swing.JButton btnRegistrarse;
-    private javax.swing.JComboBox<String> cbxPlanEstudios;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblContraseña;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblCuenta;
+    private javax.swing.JLabel lblEncabezado;
     private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lblPassword;
-    private javax.swing.JLabel lblPlanEstudios;
+    private javax.swing.JPanel panelEncabezado;
+    private javax.swing.JPanel panelPiedepag;
     private javax.swing.JTextField txtApellido;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;

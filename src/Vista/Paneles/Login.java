@@ -1,7 +1,9 @@
 package Vista.Paneles;
 
+import Controladores.Buscadores;
 import Vista.app;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,7 +31,7 @@ public class Login extends javax.swing.JDialog {
     public void deshabilitarBotonRegistrar() {
         if (txtCorreo.getText().isBlank() || txtPassword.getText().isBlank()) {
             btnIniciar.setEnabled(false);
-        } else if(!txtCorreo.getText().isBlank()){
+        } else if (!txtCorreo.getText().isBlank()) {
             btnIniciar.setEnabled(true);
         }
     }
@@ -244,11 +246,37 @@ public class Login extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed
+        String correo = txtCorreo.getText();
+        String password = String.copyValueOf(txtPassword.getPassword());
+
+        if (correo.endsWith("@alumno.uaemex.mx")) {
+            if (Buscadores.loginStudent(correo, password)) {
+                JOptionPane.showMessageDialog(null, "Login Exitoso de Estudiante");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
+            }
+        } else if (correo.endsWith("@profesor.uaemex.mx")) {
+            if (Buscadores.loginTeacher(correo, password)) {
+                JOptionPane.showMessageDialog(null, "Login Exitoso de Profesor");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
+            }
+        } else if (correo.endsWith("@admin.uaemex.mx")) {
+            if (Buscadores.loginAdmin(correo, password)) {
+                JOptionPane.showMessageDialog(null, "Login Exitoso de Administravivo");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
+            }
+        } 
+        else {
+            JOptionPane.showMessageDialog(null, "Algo salio mal");
+        }
+
 
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarseMouseClicked
-        
+
     }//GEN-LAST:event_btnRegistrarseMouseClicked
 
     private void btnRegistrarseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarseMousePressed
@@ -282,9 +310,8 @@ public class Login extends javax.swing.JDialog {
     }//GEN-LAST:event_txtPasswordKeyReleased
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
-        RegistroEstudiante n = new RegistroEstudiante(app.app, true);
+        TipoSolicitanteRegistro n = new TipoSolicitanteRegistro(app.app, true);
         n.setVisible(true);
-        btnRegistrarse.setForeground(Color.red);
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
 
