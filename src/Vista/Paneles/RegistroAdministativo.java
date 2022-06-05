@@ -279,6 +279,10 @@ public class RegistroAdministativo extends javax.swing.JDialog {
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         try {
+            if(!txtCorreo.getText().endsWith("@admin.uaemex.mx")){
+                Exception e = new Exception("El debe ser de tipo administrativo");
+                throw e;
+            }
             RegisterController.adminRegister(
                     new Nombre(txtNombre.getText(), txtApellido.getText(), true),
                     txtCorreo.getText(),

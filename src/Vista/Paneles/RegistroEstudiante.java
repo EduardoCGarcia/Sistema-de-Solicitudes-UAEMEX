@@ -270,6 +270,10 @@ public class RegistroEstudiante extends javax.swing.JDialog {
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         try {
+            if(!txtCorreo.getText().endsWith("@estudiante.uaemex.mx")){
+                Exception e = new Exception("El debe ser de tipo estudiante");
+                throw e;
+            }
             RegisterController.studentRegister(
                     new Nombre(txtNombre.getText(), txtApellido.getText(), true),
                     txtCorreo.getText(),
