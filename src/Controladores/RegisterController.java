@@ -1,10 +1,10 @@
 package Controladores;
 
-import Modelos.Administrativo;
-import Modelos.Correo;
-import Modelos.Estudiante;
-import Modelos.Nombre;
-import Modelos.Profesor;
+import Modelos.Persona.Administrativo;
+import Modelos.Genericos.Correo;
+import Modelos.Persona.Estudiante;
+import Modelos.Genericos.Nombre;
+import Modelos.Persona.Profesor;
 import Utilerias.Archivos;
 import Vista.app;
 import javax.swing.JOptionPane;

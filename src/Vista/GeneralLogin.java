@@ -5,7 +5,7 @@
  */
 package Vista;
 
-import Vista.Paneles.Login;
+import Vista.Paneles.Compartidos.Login;
 
 
 
