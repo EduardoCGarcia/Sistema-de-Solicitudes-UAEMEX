@@ -17,8 +17,8 @@ public class FondoNoAjustable extends JPanel {
     public FondoNoAjustable() {
     }
 
-    public FondoNoAjustable(String nombreArchivo) {
-        this.ruta = nombreArchivo;
+    public FondoNoAjustable(String ruta) {
+        this.ruta = ruta;
     }
     
     @Override
