@@ -270,7 +270,7 @@ public class RegistroEstudiante extends javax.swing.JDialog {
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         try {
-            if(!txtCorreo.getText().endsWith("@estudiante.uaemex.mx")){
+            if (!txtCorreo.getText().endsWith("@alumno.uaemex.mx")) {
                 Exception e = new Exception("El debe ser de tipo estudiante");
                 throw e;
             }
@@ -280,6 +280,8 @@ public class RegistroEstudiante extends javax.swing.JDialog {
                     txtNumCuenta.getText(),
                     String.copyValueOf(txtPassword.getPassword()),
                     (String) cbxPlanEstudios.getSelectedItem());
+            JOptionPane.showMessageDialog(null, "Registro exitoso!");
+            dispose();
         } catch (Exception ex) {
             System.out.println("hubo un error");
         }

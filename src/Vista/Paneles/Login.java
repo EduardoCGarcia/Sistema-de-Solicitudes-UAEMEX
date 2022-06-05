@@ -252,18 +252,21 @@ public class Login extends javax.swing.JDialog {
         if (correo.endsWith("@alumno.uaemex.mx")) {
             if (Buscadores.loginStudent(correo, password)) {
                 JOptionPane.showMessageDialog(null, "Login Exitoso de Estudiante");
+                dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
             }
         } else if (correo.endsWith("@profesor.uaemex.mx")) {
             if (Buscadores.loginTeacher(correo, password)) {
                 JOptionPane.showMessageDialog(null, "Login Exitoso de Profesor");
+                dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
             }
         } else if (correo.endsWith("@admin.uaemex.mx")) {
             if (Buscadores.loginAdmin(correo, password)) {
                 JOptionPane.showMessageDialog(null, "Login Exitoso de Administravivo");
+                dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
             }

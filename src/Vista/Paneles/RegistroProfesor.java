@@ -2,6 +2,7 @@ package Vista.Paneles;
 
 import Controladores.RegisterController;
 import Modelos.Nombre;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,7 +18,7 @@ public class RegistroProfesor extends javax.swing.JDialog {
         initComponents();
         deshabilitarBotonRegistrar();
     }
-    
+
     public void deshabilitarBotonRegistrar() {
         if (txtCorreo.getText().isBlank() || txtNombre.getText().isBlank() || txtApellido.getText().isBlank()
                 || txtNumCuenta.getText().isBlank() || txtPassword.getText().isBlank()) {
@@ -271,7 +272,7 @@ public class RegistroProfesor extends javax.swing.JDialog {
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
         try {
-            if(!txtCorreo.getText().endsWith("@profesor.uaemex.mx")){
+            if (!txtCorreo.getText().endsWith("@profesor.uaemex.mx")) {
                 Exception e = new Exception("El debe ser de tipo profesor");
                 throw e;
             }
@@ -280,6 +281,8 @@ public class RegistroProfesor extends javax.swing.JDialog {
                     txtCorreo.getText(),
                     txtNumCuenta.getText(),
                     String.copyValueOf(txtPassword.getPassword()));
+            JOptionPane.showMessageDialog(null, "Registro exitoso!");
+            dispose();
         } catch (Exception ex) {
             System.out.println("hubo un error");
         }

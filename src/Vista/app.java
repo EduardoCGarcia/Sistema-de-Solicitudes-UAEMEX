@@ -19,7 +19,7 @@ public class app {
     public static ArrayList<Profesor> profesores = Archivos.leerArchivo("profesores.dat");
     public static Solicitante sol;
     public static GeneralLogin app = new GeneralLogin();
-    
+    public static Administrativo admmin;
     
     public static void main(String[] args) {
         for (Estudiante e : estudiantes) {
