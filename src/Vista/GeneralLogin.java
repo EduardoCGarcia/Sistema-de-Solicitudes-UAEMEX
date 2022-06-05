@@ -34,7 +34,7 @@ public class GeneralLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Contenedor = new Utilerias.FondoNoAjustable("TexturaBlanco.jpg");
+        Contenedor = new Utilerias.FondoNoAjustable("TexturaBlanco1.jpeg");
         panelEncabezado2 = new javax.swing.JPanel();
         lblSomos = new javax.swing.JLabel();
         lblUAEMEX = new javax.swing.JLabel();
@@ -252,7 +252,7 @@ public class GeneralLogin extends javax.swing.JFrame {
                     .addComponent(panelEncabezado1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(41, 41, 41)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(lblSelecciona, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
