@@ -26,7 +26,7 @@ public class Login extends javax.swing.JDialog {
         }
     }
 
-    public static void deshabilitarBotonRegistrar() {
+    public void deshabilitarBotonRegistrar() {
         if (txtCorreo.getText().isBlank() || txtPassword.getText().isBlank()) {
             btnIniciar.setEnabled(false);
         } else if(!txtCorreo.getText().isBlank()){
@@ -159,6 +159,11 @@ public class Login extends javax.swing.JDialog {
                 btnRegistrarseMousePressed(evt);
             }
         });
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -243,8 +248,7 @@ public class Login extends javax.swing.JDialog {
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarseMouseClicked
-
-        btnRegistrarse.setForeground(Color.red);
+        
     }//GEN-LAST:event_btnRegistrarseMouseClicked
 
     private void btnRegistrarseMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarseMousePressed
@@ -277,9 +281,15 @@ public class Login extends javax.swing.JDialog {
         deshabilitarBotonRegistrar();
     }//GEN-LAST:event_txtPasswordKeyReleased
 
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        RegistroEstudiante n = new RegistroEstudiante(app.app, true);
+        n.setVisible(true);
+        btnRegistrarse.setForeground(Color.red);
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JButton btnIniciar;
+    private javax.swing.JButton btnIniciar;
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -289,7 +299,7 @@ public class Login extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblNoIngreso;
-    private static javax.swing.JTextField txtCorreo;
-    private static javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,9 +5,7 @@
  */
 package Vista;
 
-import Utilerias.GUITools;
 import Vista.Paneles.Login;
-import javax.swing.JPanel;
 
 
 
@@ -296,7 +294,7 @@ public class GeneralLogin extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Contenedor;
+    public javax.swing.JPanel Contenedor;
     private javax.swing.JPanel Logo;
     private javax.swing.JButton btnContinuar;
     private javax.swing.JComboBox<String> cboxUsuario;

@@ -1,7 +1,6 @@
 package Vista;
 
 import Modelos.Administrativo;
-import Modelos.Empleado;
 import Modelos.Estudiante;
 import Modelos.Profesor;
 import Utilerias.Archivos;
@@ -16,11 +15,11 @@ public class app {
     public static ArrayList<Administrativo> secretarias = Archivos.leerArchivo("secretarias.dat");
     public static ArrayList<Estudiante> estudiantes = Archivos.leerArchivo("estudiantes.dat");
     public static ArrayList<Profesor> profesores = Archivos.leerArchivo("profesores.dat");
-    
+    public static GeneralLogin app = new GeneralLogin();
     
     
     public static void main(String[] args) {
-        GeneralLogin app = new GeneralLogin();
+        
         app.setVisible(true);
         
         
