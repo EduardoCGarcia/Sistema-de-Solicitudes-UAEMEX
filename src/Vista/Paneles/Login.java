@@ -125,7 +125,7 @@ public class Login extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnRegistrarMouseClicked
 
   

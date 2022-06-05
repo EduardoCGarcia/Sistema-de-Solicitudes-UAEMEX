@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Archivos {
 
-    public static ArrayList<Object> leerArchivo(String nomArch) {
-        ArrayList<Object> array = new ArrayList<Object>();
+    public static ArrayList leerArchivo(String nomArch) {
+        ArrayList array = new ArrayList();
         try { //lee archivo     
             FileInputStream fi = new FileInputStream(nomArch);
             ObjectInputStream oi = new ObjectInputStream(fi);
@@ -26,7 +26,7 @@ public class Archivos {
         return array;
     }
 
-    public static void guardarArchivo(String nomArch, ArrayList<Object> array) {
+    public static void guardarArchivo(String nomArch, ArrayList array) {
         try {
             FileOutputStream fo = new FileOutputStream(nomArch);
             ObjectOutputStream oo = new ObjectOutputStream(fo);
