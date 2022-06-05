@@ -26,7 +26,7 @@ public class Login extends javax.swing.JDialog {
         }
     }
 
-    public static void deshabilitarBotonRegistrar() {
+    public void deshabilitarBotonRegistrar() {
         if (txtCorreo.getText().isBlank() || txtPassword.getText().isBlank()) {
             btnIniciar.setEnabled(false);
         } else if(!txtCorreo.getText().isBlank()){
@@ -279,7 +279,7 @@ public class Login extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JButton btnIniciar;
+    private javax.swing.JButton btnIniciar;
     private javax.swing.JButton btnRegistrarse;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -289,7 +289,7 @@ public class Login extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lblNoIngreso;
-    private static javax.swing.JTextField txtCorreo;
-    private static javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JPasswordField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

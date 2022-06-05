@@ -289,6 +289,7 @@ public class GeneralLogin extends javax.swing.JFrame {
         
         Login log = new Login(this,true);
         log.setVisible(true);
+
     }//GEN-LAST:event_btnContinuarActionPerformed
 
     /**
