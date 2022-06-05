@@ -1,10 +1,12 @@
 package Modelos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EduardoCGarcia
  */
-public class Correo {
+public class Correo implements Serializable{
 //Ya validado para lanzar una excepcion
     private String dir;
 

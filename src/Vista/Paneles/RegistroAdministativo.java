@@ -1,15 +1,26 @@
 package Vista.Paneles;
 
+import Controladores.Buscadores;
+import Controladores.RegisterController;
+import Modelos.Correo;
+import Modelos.Estudiante;
+import Modelos.Nombre;
+import Utilerias.Archivos;
+import Vista.app;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author EduardoCGarcia
  */
-public class RegistroEmpleado extends javax.swing.JDialog {
+public class RegistroAdministativo extends javax.swing.JDialog {
 
     /**
      * Creates new form RegistroEmpleado
      */
-    public RegistroEmpleado(java.awt.Frame parent, boolean modal) {
+    public RegistroAdministativo(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         deshabilitarBotonRegistrar();
@@ -103,6 +114,11 @@ public class RegistroEmpleado extends javax.swing.JDialog {
 
         btnRegistrarse.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
 
         panelEncabezado.setBackground(new java.awt.Color(26, 104, 53));
         panelEncabezado.setForeground(new java.awt.Color(26, 104, 53));
@@ -260,6 +276,18 @@ public class RegistroEmpleado extends javax.swing.JDialog {
     private void txtApellidoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellidoKeyReleased
         deshabilitarBotonRegistrar();
     }//GEN-LAST:event_txtApellidoKeyReleased
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        try {
+            RegisterController.teacherRegister(
+                    new Nombre(txtNombre.getText(), txtApellido.getText(), true),
+                    txtCorreo.getText(),
+                    txtNumCuenta.getText(),
+                    String.copyValueOf(txtPassword.getPassword()));
+        } catch (Exception ex) {
+            System.out.println("hubo un error");
+        }
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

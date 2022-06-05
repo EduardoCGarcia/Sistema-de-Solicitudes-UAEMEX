@@ -4,11 +4,13 @@ Validar los seter para que se lance una excepción
  */
 package Modelos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EduardoCGarcia
  */
-public class Nombre {
+public class Nombre implements Serializable{
 //Ya validado para lanzar una excepcion
     private String nombres;
     private String primerApellido;

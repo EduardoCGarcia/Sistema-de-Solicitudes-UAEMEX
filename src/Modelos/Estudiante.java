@@ -1,10 +1,12 @@
 package Modelos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EduardoCGarcia
  */
-public class Estudiante extends Solicitante {
+public class Estudiante extends Solicitante implements Serializable{
 //Ya validado para lanzar una excepcion
     private static final byte LENGTH = 7;
     private String planEstudios;

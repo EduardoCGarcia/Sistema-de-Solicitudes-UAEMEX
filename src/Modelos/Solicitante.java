@@ -1,10 +1,12 @@
 package Modelos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author EduardoCGarcia
  */
-public abstract class Solicitante {
+public abstract class Solicitante implements Serializable {
     private Nombre nombre;
     private Correo correo;
     protected String numero;
@@ -25,8 +27,8 @@ public abstract class Solicitante {
         this.nombre = nombre;
     }
 
-    public Correo getCorreo() {
-        return correo;
+    public String getCorreo() {
+        return correo.toString();
     }
 
     public void setCorreo(Correo correo) throws Exception{
@@ -37,6 +39,15 @@ public abstract class Solicitante {
         return numero;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    
     //public abstract void setNumero(String numero) throws Exception;
 
     @Override
