@@ -1,6 +1,7 @@
 package Controladores;
 
 import Utilerias.GUITools;
+import Vista.Paneles.Administrativos.LoggedAdminPanel;
 import Vista.Paneles.Solicitantes.LoggedSolicitantePanel;
 import Vista.app;
 import javax.swing.JOptionPane;
@@ -28,7 +29,7 @@ public class LoginCotroller {
         } else if (correo.endsWith("@admin.uaemex.mx")) {
             if (Buscadores.loginAdmin(correo, password)) {
                 app.admin = Buscadores.findAdmin(correo);
-                GUITools.panelIntoPanel(app.app.Contenedor, new LoggedSolicitantePanel());
+                GUITools.panelIntoPanel(app.app.Contenedor, new LoggedAdminPanel());
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
             }

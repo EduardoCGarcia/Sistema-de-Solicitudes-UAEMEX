@@ -1,19 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package Vista.Paneles.Solicitantes;
 
-import Controladores.Buscadores;
 import Controladores.RegisterController;
-import Modelos.Genericos.Correo;
-import Modelos.Persona.Estudiante;
 import Modelos.Genericos.Nombre;
-import Modelos.Persona.Abstractos.Solicitante;
-import Utilerias.Archivos;
-import Vista.app;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -280,7 +268,6 @@ public class RegistroEstudiante extends javax.swing.JDialog {
                     txtNumCuenta.getText(),
                     String.copyValueOf(txtPassword.getPassword()),
                     (String) cbxPlanEstudios.getSelectedItem());
-            JOptionPane.showMessageDialog(null, "Registro exitoso!");
             dispose();
         } catch (Exception ex) {
             System.out.println("hubo un error");

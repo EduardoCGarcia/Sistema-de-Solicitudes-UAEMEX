@@ -281,7 +281,6 @@ public class RegistroProfesor extends javax.swing.JDialog {
                     txtCorreo.getText(),
                     txtNumCuenta.getText(),
                     String.copyValueOf(txtPassword.getPassword()));
-            JOptionPane.showMessageDialog(null, "Registro exitoso!");
             dispose();
         } catch (Exception ex) {
             System.out.println("hubo un error");

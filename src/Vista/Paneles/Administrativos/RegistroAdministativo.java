@@ -1,14 +1,7 @@
 package Vista.Paneles.Administrativos;
 
-import Controladores.Buscadores;
 import Controladores.RegisterController;
-import Modelos.Genericos.Correo;
-import Modelos.Persona.Estudiante;
 import Modelos.Genericos.Nombre;
-import Utilerias.Archivos;
-import Vista.app;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -288,7 +281,6 @@ public class RegistroAdministativo extends javax.swing.JDialog {
                     txtCorreo.getText(),
                     txtNumCuenta.getText(),
                     String.copyValueOf(txtPassword.getPassword()));
-            JOptionPane.showMessageDialog(null,"Registro exitoso!");
             dispose();
         } catch (Exception ex) {
             System.out.println("hubo un error 111");

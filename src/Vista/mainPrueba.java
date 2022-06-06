@@ -1,9 +1,6 @@
 package Vista;
 
-import Controladores.RegisterController;
 import Vista.Paneles.Administrativos.RegistroAdministativo;
-import javax.imageio.spi.RegisterableService;
-import javax.swing.JFrame;
 
 /**
  *
