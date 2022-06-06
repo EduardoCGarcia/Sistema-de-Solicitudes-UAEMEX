@@ -1,12 +1,8 @@
 package Vista.Paneles.Compartidos;
 
-import Controladores.Buscadores;
 import Controladores.LoginCotroller;
-import Modelos.Persona.Estudiante;
-import Utilerias.GUITools;
 import Vista.app;
 import java.awt.Color;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -253,6 +249,7 @@ public class Login extends javax.swing.JDialog {
         String password = String.copyValueOf(txtPassword.getPassword());
         
         LoginCotroller.login(correo, password);
+        dispose();
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarseMouseClicked
