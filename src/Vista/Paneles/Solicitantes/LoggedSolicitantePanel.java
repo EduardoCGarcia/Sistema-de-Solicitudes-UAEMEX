@@ -22,10 +22,6 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
      */
     public LoggedSolicitantePanel() {
         initComponents();
-<<<<<<< HEAD
-        app.sol.getNombre().setTipo(true);
-=======
->>>>>>> ffe4d3baa0600554588165c683a622a3fc9f7eef
         lblNombreCompleto.setText(app.sol.getNombre().toString());
     }
 

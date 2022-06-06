@@ -190,7 +190,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
         lblEntrarComo.setText("Entrar como:");
 
         cboxUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        cboxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrativo", "Solicitante", "Subdirección académica" }));
+        cboxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrativo", "Solicitante" }));
 
         btnContinuar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnContinuar.setText("Continuar");
