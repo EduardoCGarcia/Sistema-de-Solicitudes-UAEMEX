@@ -4,9 +4,13 @@ package Utilerias;
 //import Modelos.Maicitos;
 //import Modelos.Venta;
 //import app.Main;
-import java.awt.Color;
+import Modelos.Genericos.Solicitud;
+import Vista.app;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 //import java.util.ArrayList;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 //import javax.swing.table.DefaultTableModel;
 
 /**
@@ -14,55 +18,38 @@ import javax.swing.JPanel;
  * @author EduardoCGarcia
  */
 public class GUITools {
-//    public static DefaultTableModel setModelAndTableModel(){
-//        DefaultTableModel modelo =  setColumnsTable();
-//        
-//        for (Maicitos m : Main.maicitos) {
-//            String filas[]={
-//                String.format("%d",m.getId()),
-//                m.getSabor(),
-//                String.format("%.2f",m.getPrecio()),
-//                String.format("%d",m.getTam()),
-//                String.format("%d",m.getCantidad())
-//            };
-//            modelo.addRow(filas);
-//        }
-//        return modelo;
-//    }
-//    
-//    public static DefaultTableModel setModelAndTableModelAgregar(int idBuscado){
-//        DefaultTableModel modelo =  setColumnsTable();
-//        Maicitos m = CRUD.findMaicito(idBuscado);
-//        if(m != null){
-//            String filas[]={
-//                String.format("%d",m.getId()),
-//                m.getSabor(),
-//                String.format("%.2f",m.getPrecio()),
-//                String.format("%d",m.getTam()),
-//                String.format("%d",m.getCantidad())
-//            };
-//            modelo.addRow(filas);
-//            return modelo;
-//        }
-//            
-//        return null;
-//    }
-//    
-//    public static DefaultTableModel setColumnsTable(){
-//        DefaultTableModel modelo =  new DefaultTableModel();
-//        /*Establecemos las columnas*/
-//        ArrayList<String> columnas = new ArrayList<String> ();
-//        columnas.add("Id");
-//        columnas.add("Sabor");
-//        columnas.add("Precio");
-//        columnas.add("Tamaño");
-//        columnas.add("Cantidad");
-//        
-//        for(Object col:columnas){
-//            modelo.addColumn(col);
-//        }
-//        return modelo;
-//    }
+    public static DefaultTableModel setModelAndTableModel(){
+        DefaultTableModel modelo =  setColumnsTable();
+        
+        for (Solicitud s : app.solicitudes) {
+            String filas[]={
+                String.format("%s",s.getFolio().getFolio()),
+                s.getAsunto(),
+                s.getEstatus(),
+                String.format("%s", s.getFechaDeSolicitud().format(DateTimeFormatter.ISO_LOCAL_DATE)),
+                String.format("%s",s.getSolitante().getNumero())
+            };
+            modelo.addRow(filas);
+        }
+        return modelo;
+    }
+
+   
+    public static DefaultTableModel setColumnsTable(){
+        DefaultTableModel modelo =  new DefaultTableModel();
+        /*Establecemos las columnas*/
+        ArrayList<String> columnas = new ArrayList<String> ();
+        columnas.add("Folio");
+        columnas.add("Asunto");
+        columnas.add("Estatus");
+        columnas.add("Fecha");
+        columnas.add("Numero de Cuenta");
+        
+        for(Object col:columnas){
+            modelo.addColumn(col);
+        }
+        return modelo;
+    }
 //    public static DefaultTableModel setColumnsTableVentas(){
 //        DefaultTableModel modelo =  new DefaultTableModel();
 //        /*Establecemos las columnas*/

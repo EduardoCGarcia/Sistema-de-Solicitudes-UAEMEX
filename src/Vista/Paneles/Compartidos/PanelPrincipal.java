@@ -190,7 +190,7 @@ public class PanelPrincipal extends javax.swing.JPanel {
         lblEntrarComo.setText("Entrar como:");
 
         cboxUsuario.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        cboxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrativo", "Solicitante" }));
+        cboxUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrativo", "Solicitante", "Subdirección académica" }));
 
         btnContinuar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         btnContinuar.setText("Continuar");
@@ -232,9 +232,9 @@ public class PanelPrincipal extends javax.swing.JPanel {
                         .addGap(299, 299, 299))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorLayout.createSequentialGroup()
                         .addComponent(lblEntrarComo, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(cboxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(222, 222, 222))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cboxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(200, 200, 200))))
         );
         ContenedorLayout.setVerticalGroup(
             ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,11 +246,11 @@ public class PanelPrincipal extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(lblSelecciona, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(40, 40, 40)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboxUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEntrarComo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(35, 35, 35)
                 .addComponent(btnContinuar)
                 .addGap(34, 34, 34)
                 .addComponent(panelPieDePagina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -273,9 +273,11 @@ public class PanelPrincipal extends javax.swing.JPanel {
 
         if (cbx.equals("Administrativo")) {
             app.role = "admin";
-        } else {
+        } else if(cbx.equals("Solicitante")){
             app.role = "suscriptor";
-        }
+        } else if(cbx.equals("Subdirección académica")) {
+            
+        }   
 
         Login log = new Login(app.app,true);
         log.setVisible(true);

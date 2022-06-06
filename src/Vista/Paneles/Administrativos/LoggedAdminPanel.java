@@ -1,5 +1,6 @@
 package Vista.Paneles.Administrativos;
 
+import Vista.Paneles.Compartidos.ConsultarStatusPanel;
 import Utilerias.GUITools;
 import Vista.Paneles.Compartidos.NuevaSolicitudPanel;
 import java.awt.Color;
@@ -113,6 +114,11 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnEmitirOficioMouseExited(evt);
+            }
+        });
+        btnEmitirOficio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmitirOficioActionPerformed(evt);
             }
         });
 
@@ -322,8 +328,14 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnConsultarEstatusActionPerformed
 
     private void btnSolicitudRegistradasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitudRegistradasActionPerformed
-        // TODO add your handling code here:
+        ConsultasSolicitudesPanel n = new ConsultasSolicitudesPanel();
+        GUITools.panelIntoPanel(ContenedorDinamico, n);
     }//GEN-LAST:event_btnSolicitudRegistradasActionPerformed
+
+    private void btnEmitirOficioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmitirOficioActionPerformed
+        EmitirRespuesta n = new EmitirRespuesta();
+        GUITools.panelIntoPanel(ContenedorDinamico, n);
+    }//GEN-LAST:event_btnEmitirOficioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

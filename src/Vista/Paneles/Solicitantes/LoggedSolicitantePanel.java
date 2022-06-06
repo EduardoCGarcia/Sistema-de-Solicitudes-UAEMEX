@@ -5,6 +5,7 @@
 package Vista.Paneles.Solicitantes;
 
 import Utilerias.GUITools;
+import Vista.Paneles.Compartidos.ConsultarStatusPanel;
 import Vista.Paneles.Compartidos.NuevaSolicitudPanel;
 import Vista.Paneles.Compartidos.PanelPrincipal;
 import Vista.app;
@@ -81,6 +82,11 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
                 btnConsultarMouseExited(evt);
             }
         });
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         btnSalir.setBackground(new java.awt.Color(255, 255, 255));
         btnSalir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -152,7 +158,7 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
                 .addComponent(btnNuevaSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
                 .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -257,6 +263,11 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
         app.sol = null;
         app.typeRole = "";
     }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+       ConsultarStatusPanel n = new ConsultarStatusPanel();
+       GUITools.panelIntoPanel(ContenedorDinamico, n);
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
