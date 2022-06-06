@@ -1,8 +1,11 @@
 package Vista.Paneles.Compartidos;
+import Controladores.SolicitudController;
 import Utilerias.FondoImagen;
 import Vista.app;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -59,7 +62,7 @@ public class NuevaSolicitudPanel extends javax.swing.JPanel {
             EncabezadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EncabezadoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                .addComponent(lblDescripcion, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -130,7 +133,7 @@ public class NuevaSolicitudPanel extends javax.swing.JPanel {
                 .addComponent(lblIndicaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEjemplo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblAsunto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtAsunto, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -159,27 +162,10 @@ public class NuevaSolicitudPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        int indice = app.solicitudes.size();
-        String codigo = "";
-        
-        Date date = new Date();
-        Calendar calendar = Calendar.getInstance();
-
-        calendar.setTime(date);
-        int dateYear = calendar.get(Calendar.YEAR);
-        
-        if(indice > 0 && indice < 10){
-            codigo = "SOL" + dateYear + "00000" + String.valueOf(indice);
-        }else if(indice > 9 && indice < 100){
-            codigo = "SOL" + dateYear + "0000" + String.valueOf(indice);
-        }else if(indice > 99 && indice < 1000){
-            codigo = "SOL" + dateYear + "000" + String.valueOf(indice);
-        }else if(indice > 999 && indice < 10000){
-            codigo = "SOL" + dateYear + "00" + String.valueOf(indice);
-        }else if(indice > 9999 && indice < 100000){
-            codigo = "SOL" + dateYear + "0" + String.valueOf(indice);
-        }else if(indice > 99999 && indice < 1000000){
-            codigo = "SOL" + dateYear + String.valueOf(indice);
+        try {
+            SolicitudController.registrarSolicitud(txtAsunto.getText());
+        } catch (Exception ex) {
+            Logger.getLogger(NuevaSolicitudPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 

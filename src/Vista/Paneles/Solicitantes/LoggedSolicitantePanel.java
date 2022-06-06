@@ -4,6 +4,10 @@
  */
 package Vista.Paneles.Solicitantes;
 
+import Utilerias.GUITools;
+import Vista.Paneles.Compartidos.NuevaSolicitudPanel;
+import Vista.Paneles.Compartidos.PanelPrincipal;
+import Vista.app;
 import java.awt.Color;
 
 /**
@@ -84,6 +88,11 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnSalirMouseExited(evt);
+            }
+        });
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
             }
         });
 
@@ -197,8 +206,17 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSalirMouseExited
 
     private void btnNuevaSolicitudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaSolicitudActionPerformed
-        // TODO add your handling code here:
+        NuevaSolicitudPanel s = new NuevaSolicitudPanel();
+        GUITools.panelIntoPanel(ContenedorDinamico, s);
     }//GEN-LAST:event_btnNuevaSolicitudActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        GUITools.panelIntoPanel(app.app.Contenedor, new PanelPrincipal());
+        app.admin = null;
+        app.role = "";
+        app.sol = null;
+        app.typeRole = "";
+    }//GEN-LAST:event_btnSalirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

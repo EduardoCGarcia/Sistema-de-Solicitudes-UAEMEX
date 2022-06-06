@@ -15,6 +15,7 @@ public class LoginCotroller {
         if (correo.endsWith("@alumno.uaemex.mx")) {
             if (Buscadores.loginStudent(correo, password)) {
                 app.sol = Buscadores.findStudent(correo);
+                app.typeRole = "alumno";
                 GUITools.panelIntoPanel(app.app.Contenedor, new LoggedSolicitantePanel());
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
@@ -22,6 +23,7 @@ public class LoginCotroller {
         } else if (correo.endsWith("@profesor.uaemex.mx")) {
             if (Buscadores.loginTeacher(correo, password)) {
                 app.sol = Buscadores.findTeacher(correo);
+                app.typeRole = "profesor";
                 GUITools.panelIntoPanel(app.app.Contenedor, new LoggedSolicitantePanel());
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
@@ -29,6 +31,7 @@ public class LoginCotroller {
         } else if (correo.endsWith("@admin.uaemex.mx")) {
             if (Buscadores.loginAdmin(correo, password)) {
                 app.admin = Buscadores.findAdmin(correo);
+                app.typeRole = "admin";
                 GUITools.panelIntoPanel(app.app.Contenedor, new LoggedAdminPanel());
             } else {
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos");
