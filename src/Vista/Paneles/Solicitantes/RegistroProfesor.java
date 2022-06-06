@@ -2,6 +2,7 @@ package Vista.Paneles.Solicitantes;
 
 import Controladores.RegisterController;
 import Modelos.Genericos.Nombre;
+import javax.swing.JOptionPane;
 
 /**
  *
