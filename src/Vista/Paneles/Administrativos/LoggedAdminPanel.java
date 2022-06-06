@@ -2,7 +2,9 @@ package Vista.Paneles.Administrativos;
 
 import Vista.Paneles.Compartidos.ConsultarStatusPanel;
 import Utilerias.GUITools;
+import Vista.Paneles.Compartidos.EmitirRespuesta;
 import Vista.Paneles.Compartidos.NuevaSolicitudPanel;
+import Vista.app;
 import java.awt.Color;
 
 /**
@@ -16,8 +18,8 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
      */
     public LoggedAdminPanel() {
         initComponents();
-        btnNuevaSolicitud.setContentAreaFilled(false);
-        btnNuevaSolicitud.setBorderPainted(false);
+        app.admin.getNombre().setTipo(true);
+        lblNombreCompleto.setText(app.admin.getNombre().toString());
     }
 
     /**
@@ -228,13 +230,14 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
 
         lblNombreCompleto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblNombreCompleto.setText("Nombre");
+        lblNombreCompleto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout ContenedorDinamicoLayout = new javax.swing.GroupLayout(ContenedorDinamico);
         ContenedorDinamico.setLayout(ContenedorDinamicoLayout);
         ContenedorDinamicoLayout.setHorizontalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContenedorDinamicoLayout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addContainerGap(202, Short.MAX_VALUE)
                 .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
                         .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -242,8 +245,8 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
                             .addComponent(Avatar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(180, 180, 180))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
-                        .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))))
+                        .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109))))
         );
         ContenedorDinamicoLayout.setVerticalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,7 +255,7 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
                 .addComponent(lblBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(Avatar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
+                .addGap(65, 65, 65)
                 .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

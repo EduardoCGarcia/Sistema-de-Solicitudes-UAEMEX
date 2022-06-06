@@ -6,7 +6,7 @@
 package Vista.Paneles.SubdireccionAcademica;
 
 import Utilerias.GUITools;
-import Vista.Paneles.Compartidos.ConsultarSolicitudesPanel;
+import Vista.Paneles.Administrativos.ConsultasSolicitudesPanel;
 import Vista.Paneles.Compartidos.EmitirRespuesta;
 import java.awt.Color;
 
@@ -284,7 +284,7 @@ public class LoggerSubdireccionAcademica extends javax.swing.JPanel {
 
     private void btnConsultarSolicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarSolicitudesActionPerformed
         
-        //GUITools.panelIntoPanel(ContenedorDinamico,new ConsultarSolicitudesPanel());
+        GUITools.panelIntoPanel(ContenedorDinamico,new ConsultasSolicitudesPanel());
     }//GEN-LAST:event_btnConsultarSolicitudesActionPerformed
 
     private void btnEmitirRespuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmitirRespuestaActionPerformed

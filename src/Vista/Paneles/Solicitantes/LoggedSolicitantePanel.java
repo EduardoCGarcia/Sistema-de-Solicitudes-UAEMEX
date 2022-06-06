@@ -22,6 +22,8 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
      */
     public LoggedSolicitantePanel() {
         initComponents();
+        app.sol.getNombre().setTipo(true);
+        lblNombreCompleto.setText(app.sol.getNombre().toString());
     }
 
     /**
@@ -129,7 +131,7 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
                     .addGroup(panelDescripcionLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jLabel1)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         panelDescripcionLayout.setVerticalGroup(
             panelDescripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +189,7 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
         ContenedorDinamicoLayout.setHorizontalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContenedorDinamicoLayout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
+                .addContainerGap(263, Short.MAX_VALUE)
                 .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
                         .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -195,8 +197,8 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
                             .addComponent(Avatar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(180, 180, 180))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
-                        .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50))))
+                        .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(129, 129, 129))))
         );
         ContenedorDinamicoLayout.setVerticalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +207,7 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
                 .addComponent(lblBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(Avatar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64)
+                .addGap(59, 59, 59)
                 .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -216,9 +218,8 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(BarraLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(ContenedorDinamico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                .addGap(0, 0, 0)
+                .addComponent(ContenedorDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +233,7 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNuevaSolicitudMouseEntered
 
     private void btnNuevaSolicitudMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNuevaSolicitudMouseExited
-       btnNuevaSolicitud.setForeground(Color.WHITE);
+        btnNuevaSolicitud.setForeground(Color.WHITE);
     }//GEN-LAST:event_btnNuevaSolicitudMouseExited
 
     private void btnConsultarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnConsultarMouseEntered
@@ -265,8 +266,8 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-       ConsultarStatusPanel n = new ConsultarStatusPanel();
-       GUITools.panelIntoPanel(ContenedorDinamico, n);
+        ConsultarStatusPanel n = new ConsultarStatusPanel();
+        GUITools.panelIntoPanel(ContenedorDinamico, n);
     }//GEN-LAST:event_btnConsultarActionPerformed
 
 
