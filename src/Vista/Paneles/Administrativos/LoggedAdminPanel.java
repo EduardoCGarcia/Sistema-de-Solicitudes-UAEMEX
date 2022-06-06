@@ -2,8 +2,6 @@ package Vista.Paneles.Administrativos;
 
 import Utilerias.GUITools;
 import Vista.Paneles.Compartidos.NuevaSolicitudPanel;
-import Vista.Paneles.Compartidos.PanelPrincipal;
-import Vista.app;
 import java.awt.Color;
 
 /**
@@ -39,7 +37,10 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         btnNuevaSolicitud = new javax.swing.JButton();
-        ContenedorDinamico = new javax.swing.JPanel();
+        ContenedorDinamico = new Utilerias.FondoNoAjustable("TexturaBlanco1.jpeg");
+        lblBienvenido = new javax.swing.JLabel();
+        Avatar = new Utilerias.FondoImagen("avatarVerde.png");
+        lblNombreCompleto = new javax.swing.JLabel();
 
         BarraMenu.setBackground(new java.awt.Color(26, 104, 53));
         BarraMenu.setForeground(new java.awt.Color(26, 104, 53));
@@ -196,24 +197,58 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
                 .addComponent(btnConsultarEstatus)
                 .addGap(55, 55, 55)
                 .addComponent(btnSolicitudRegistradas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addComponent(btnEmitirOficio)
-                .addGap(41, 41, 41)
+                .addGap(56, 56, 56)
                 .addComponent(btnSalir)
                 .addGap(25, 25, 25))
         );
 
         ContenedorDinamico.setBackground(new java.awt.Color(153, 0, 153));
 
+        lblBienvenido.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblBienvenido.setText("Bienvenido!");
+
+        javax.swing.GroupLayout AvatarLayout = new javax.swing.GroupLayout(Avatar);
+        Avatar.setLayout(AvatarLayout);
+        AvatarLayout.setHorizontalGroup(
+            AvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        AvatarLayout.setVerticalGroup(
+            AvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 135, Short.MAX_VALUE)
+        );
+
+        lblNombreCompleto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblNombreCompleto.setText("Nombre");
+
         javax.swing.GroupLayout ContenedorDinamicoLayout = new javax.swing.GroupLayout(ContenedorDinamico);
         ContenedorDinamico.setLayout(ContenedorDinamicoLayout);
         ContenedorDinamicoLayout.setHorizontalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 536, Short.MAX_VALUE)
+            .addGroup(ContenedorDinamicoLayout.createSequentialGroup()
+                .addContainerGap(83, Short.MAX_VALUE)
+                .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
+                        .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                            .addComponent(Avatar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(180, 180, 180))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
+                        .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))))
         );
         ContenedorDinamicoLayout.setVerticalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(lblBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(Avatar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -278,11 +313,7 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNuevaSolicitudMouseExited
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        GUITools.panelIntoPanel(app.app.Contenedor, new PanelPrincipal());
-        app.admin = null;
-        app.role = "";
-        app.sol = null;
-        app.typeRole = "";
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnConsultarEstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarEstatusActionPerformed
@@ -296,6 +327,7 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Avatar;
     private javax.swing.JPanel BarraMenu;
     private javax.swing.JPanel ContenedorDinamico;
     private javax.swing.JButton btnConsultarEstatus;
@@ -306,5 +338,7 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblBienvenido;
+    private javax.swing.JLabel lblNombreCompleto;
     // End of variables declaration//GEN-END:variables
 }

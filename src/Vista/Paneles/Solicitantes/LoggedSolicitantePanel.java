@@ -39,11 +39,15 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
         panelDescripcion = new Utilerias.FondoNoAjustable("TexturaBlanco1.jpeg");
         lblDescripcion = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        ContenedorDinamico = new javax.swing.JPanel();
+        ContenedorDinamico = new Utilerias.FondoNoAjustable("TexturaBlanco1.jpeg");
+        lblBienvenido = new javax.swing.JLabel();
+        lblNombreCompleto = new javax.swing.JLabel();
+        Avatar = new Utilerias.FondoImagen("avatarVerde.png");
 
         BarraLateral.setBackground(new java.awt.Color(26, 104, 53));
         BarraLateral.setForeground(new java.awt.Color(26, 104, 53));
 
+        btnNuevaSolicitud.setBackground(new java.awt.Color(255, 255, 255));
         btnNuevaSolicitud.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnNuevaSolicitud.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevaSolicitud.setText("Nueva solicitud");
@@ -63,6 +67,7 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
             }
         });
 
+        btnConsultar.setBackground(new java.awt.Color(255, 255, 255));
         btnConsultar.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         btnConsultar.setForeground(new java.awt.Color(255, 255, 255));
         btnConsultar.setText("Consultar estatus");
@@ -77,6 +82,7 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
             }
         });
 
+        btnSalir.setBackground(new java.awt.Color(255, 255, 255));
         btnSalir.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
@@ -153,15 +159,49 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
 
         ContenedorDinamico.setBackground(new java.awt.Color(153, 0, 153));
 
+        lblBienvenido.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        lblBienvenido.setText("Bienvenido!");
+
+        lblNombreCompleto.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblNombreCompleto.setText("Nombre");
+
+        javax.swing.GroupLayout AvatarLayout = new javax.swing.GroupLayout(Avatar);
+        Avatar.setLayout(AvatarLayout);
+        AvatarLayout.setHorizontalGroup(
+            AvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        AvatarLayout.setVerticalGroup(
+            AvatarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 135, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout ContenedorDinamicoLayout = new javax.swing.GroupLayout(ContenedorDinamico);
         ContenedorDinamico.setLayout(ContenedorDinamicoLayout);
         ContenedorDinamicoLayout.setHorizontalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 536, Short.MAX_VALUE)
+            .addGroup(ContenedorDinamicoLayout.createSequentialGroup()
+                .addContainerGap(83, Short.MAX_VALUE)
+                .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
+                        .addGroup(ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(lblBienvenido, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                            .addComponent(Avatar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(180, 180, 180))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
+                        .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))))
         );
         ContenedorDinamicoLayout.setVerticalGroup(
             ContenedorDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorDinamicoLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(lblBienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(Avatar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addComponent(lblNombreCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -220,13 +260,16 @@ public class LoggedSolicitantePanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Avatar;
     private javax.swing.JPanel BarraLateral;
     private javax.swing.JPanel ContenedorDinamico;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnNuevaSolicitud;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblBienvenido;
     private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblNombreCompleto;
     private javax.swing.JPanel panelDescripcion;
     // End of variables declaration//GEN-END:variables
 }
