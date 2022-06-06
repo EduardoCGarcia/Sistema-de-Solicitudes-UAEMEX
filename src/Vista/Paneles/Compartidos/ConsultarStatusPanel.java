@@ -7,6 +7,7 @@ package Vista.Paneles.Compartidos;
 import Controladores.Buscadores;
 import Modelos.Genericos.Solicitud;
 import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -254,6 +255,8 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
             lblEstatusSolicitud.setText(s.getEstatus());
             lblNumeroSolicitante.setText(s.getSolitante().getNumero());
             
+        }else{
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la solicitud");
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
