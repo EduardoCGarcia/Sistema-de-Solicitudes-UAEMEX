@@ -1,5 +1,6 @@
 package Vista;
 
+import Vista.Paneles.Administrativos.LoggedAdminPanel;
 import Vista.Paneles.Administrativos.RegistroAdministativo;
 
 /**
@@ -9,7 +10,7 @@ import Vista.Paneles.Administrativos.RegistroAdministativo;
 public class mainPrueba {
     
     public static void main(String[] args) {
-        RegistroAdministativo n = new RegistroAdministativo(app.app, true);
+        LoggedAdminPanel n = new LoggedAdminPanel();
         n.setVisible(true);
         /*if ("asjh@admin.uaemex.mx".matches("[A-Za-z0-9+_.-]+@(alumno.uaemex.mx)$") ||
             "asjh@admin.uaemex.mx".matches("[A-Za-z0-9+_.-]+@(profesor.uaemex.mx)$") ||

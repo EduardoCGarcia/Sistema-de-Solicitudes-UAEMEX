@@ -5,6 +5,10 @@
  */
 package Vista.Paneles.Compartidos;
 
+import Controladores.Buscadores;
+import Modelos.Genericos.Solicitud;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Gonzalo CH
@@ -109,6 +113,11 @@ public class EmitirRespuesta extends javax.swing.JPanel {
 
         btnBuscar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout FondoLayout = new javax.swing.GroupLayout(Fondo);
         Fondo.setLayout(FondoLayout);
@@ -129,15 +138,15 @@ public class EmitirRespuesta extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
-                        .addComponent(btnEmitir)
-                        .addGap(216, 216, 216))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
                         .addComponent(lblFolio)
                         .addGap(18, 18, 18)
                         .addComponent(txtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnBuscar)
-                        .addGap(70, 70, 70))))
+                        .addGap(70, 70, 70))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoLayout.createSequentialGroup()
+                        .addComponent(btnEmitir)
+                        .addGap(230, 230, 230))))
         );
         FondoLayout.setVerticalGroup(
             FondoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,9 +162,9 @@ public class EmitirRespuesta extends javax.swing.JPanel {
                     .addComponent(lblEstadoDeEmision, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEmitir)
-                .addContainerGap())
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -180,7 +189,19 @@ public class EmitirRespuesta extends javax.swing.JPanel {
     private void btnEmitirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmitirActionPerformed
         // Condicional Si bandera de estado de emision esta activa(ya emitida) el boton se desactiva
         // Si la bandera de estado de emision esta desactivada (no emitida) el boton se activa
+        
     }//GEN-LAST:event_btnEmitirActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Solicitud s = Buscadores.findSolicitud(txtFolio.getText());
+        if (s != null) {
+            s.setEstadoEmision(true);
+            s.setEstatus("Respodida");
+            s.setRespuesta(txtAreaRespuesta.getText());
+        }else{
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la solicitud");
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

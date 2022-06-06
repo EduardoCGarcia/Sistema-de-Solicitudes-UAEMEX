@@ -6,7 +6,6 @@
 package Vista.Paneles.SubdireccionAcademica;
 
 import Utilerias.GUITools;
-import Vista.Paneles.Compartidos.ConsultarSolicitudesPanel;
 import Vista.Paneles.Compartidos.EmitirRespuesta;
 import java.awt.Color;
 
