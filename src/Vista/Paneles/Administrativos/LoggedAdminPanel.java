@@ -2,6 +2,8 @@ package Vista.Paneles.Administrativos;
 
 import Utilerias.GUITools;
 import Vista.Paneles.Compartidos.NuevaSolicitudPanel;
+import Vista.Paneles.Compartidos.PanelPrincipal;
+import Vista.app;
 import java.awt.Color;
 
 /**
@@ -276,7 +278,11 @@ public class LoggedAdminPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnNuevaSolicitudMouseExited
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        // TODO add your handling code here:
+        GUITools.panelIntoPanel(app.app.Contenedor, new PanelPrincipal());
+        app.admin = null;
+        app.role = "";
+        app.sol = null;
+        app.typeRole = "";
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnConsultarEstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarEstatusActionPerformed

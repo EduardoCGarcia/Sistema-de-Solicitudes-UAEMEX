@@ -6,7 +6,10 @@ import Modelos.Persona.Profesor;
 import Modelos.Persona.Abstractos.Solicitante;
 import Modelos.Genericos.Solicitud;
 import Utilerias.Archivos;
+import Utilerias.FondoImagen;
+import Utilerias.FondoNoAjustable;
 import java.util.ArrayList;
+import javax.swing.JPanel;
 
 /**
  *
@@ -14,7 +17,7 @@ import java.util.ArrayList;
  */
 public class app {
     public static String role = "";
-    public static String typeSuscriptor = "";
+    public static String typeRole = "";
     public static ArrayList<Administrativo> secretarias = Archivos.leerArchivo("secretarias.dat");
     public static ArrayList<Estudiante> estudiantes = Archivos.leerArchivo("estudiantes.dat");
     public static ArrayList<Profesor> profesores = Archivos.leerArchivo("profesores.dat");
@@ -22,7 +25,6 @@ public class app {
     public static Solicitante sol;
     public static Administrativo admin;
     public static GeneralLogin app = new GeneralLogin();
-    public static Administrativo admmin;
     
     public static void main(String[] args) {
         for (Estudiante e : estudiantes) {
@@ -46,6 +48,10 @@ public class app {
         System.out.println("PROFESOR==============================================================================");
         for (Solicitante s : profesores) {
             System.out.println(String.format("%s %s %s %s", s.getNumero(),s.getNombre(),s.getCorreo(),s.getPassword()));
+        }
+        System.out.println("SOLICITUDES==============================================================================");
+        for (Solicitud s : solicitudes) {
+            System.out.println(String.format("%s %s %s %s", s.getFolio().getFolio(),s.getAsunto(),s.getEstatus(),s.getSolitante()));
         }
     }
     

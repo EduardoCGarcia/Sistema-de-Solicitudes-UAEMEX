@@ -1,12 +1,13 @@
 package Modelos.Genericos;
 
 import Modelos.Persona.Abstractos.Solicitante;
+import java.io.Serializable;
 import java.time.LocalDate;
 /**
  *
  * @author EduardoCGarcia
  */
-public class Solicitud {
+public class Solicitud implements Serializable{
     private String asunto;
     private Solicitante solitante;
     private LocalDate fechaDeSolicitud;
@@ -22,7 +23,7 @@ public class Solicitud {
         
     }
 
-    public Solicitud() {
+    public Solicitud() throws Exception {
         this.folio = new Folio();
     }
 
