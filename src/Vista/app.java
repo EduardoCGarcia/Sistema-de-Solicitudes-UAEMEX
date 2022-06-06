@@ -8,6 +8,7 @@ import Modelos.Genericos.Solicitud;
 import Utilerias.Archivos;
 import Utilerias.FondoImagen;
 import Utilerias.FondoNoAjustable;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
@@ -51,7 +52,7 @@ public class app {
         }
         System.out.println("SOLICITUDES==============================================================================");
         for (Solicitud s : solicitudes) {
-            System.out.println(String.format("%s %s %s %s", s.getFolio().getFolio(),s.getAsunto(),s.getEstatus(),s.getSolitante()));
+            System.out.println(String.format("%s %s %s %s", s.getFolio().getFolio(),s.getAsunto(),s.getFechaDeSolicitud().format(DateTimeFormatter.ISO_LOCAL_DATE),s.getSolitante()));
         }
     }
     

@@ -66,9 +66,9 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="lblEntrarComo" min="-2" pref="99" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="cboxUsuario" min="-2" pref="191" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="cboxUsuario" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -85,12 +85,12 @@
                   <Component id="jLabel1" min="-2" pref="45" max="-2" attributes="0"/>
                   <EmptySpace pref="46" max="32767" attributes="0"/>
                   <Component id="lblSelecciona" min="-2" pref="44" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cboxUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblEntrarComo" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="btnContinuar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   <Component id="panelPieDePagina" min="-2" max="-2" attributes="0"/>
@@ -374,9 +374,10 @@
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="2">
+              <StringArray count="3">
                 <StringItem index="0" value="Administrativo"/>
                 <StringItem index="1" value="Solicitante"/>
+                <StringItem index="2" value="Subdirecci&#xf3;n acad&#xe9;mica"/>
               </StringArray>
             </Property>
           </Properties>

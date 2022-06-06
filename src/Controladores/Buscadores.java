@@ -2,6 +2,7 @@ package Controladores;
 
 import Modelos.Persona.Administrativo;
 import Modelos.Genericos.Correo;
+import Modelos.Genericos.Solicitud;
 import Modelos.Persona.Estudiante;
 import Modelos.Persona.Profesor;
 import Vista.app;
@@ -15,6 +16,14 @@ public class Buscadores {
         for (Estudiante e : app.estudiantes) {
             if(e.getNumero().equals(numero) || e.getCorreo().equals(correo)){
                 return e;
+            }
+        }
+        return null;
+    }
+    public static Solicitud findSolicitud(String folio){
+        for (Solicitud s : app.solicitudes) {
+            if(s.getFolio().getFolio().equals(folio)){
+                return s;
             }
         }
         return null;

@@ -2,7 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Vista.Paneles.Administrativos;
+package Vista.Paneles.Compartidos;
+
+import Controladores.Buscadores;
+import Modelos.Genericos.Solicitud;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -15,6 +19,7 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
      */
     public ConsultarStatusPanel() {
         initComponents();
+        
     }
 
     /**
@@ -27,25 +32,24 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtFolio = new javax.swing.JTextField();
         FondoHoja = new Utilerias.FondoNoAjustable("TexturaBlanco1.jpeg");
-        lblSolicitud = new javax.swing.JLabel();
+        lblFolio = new javax.swing.JLabel();
         lblFolioSolicitud = new javax.swing.JLabel();
         lblAsunto = new javax.swing.JLabel();
         lblAsuntoSolicitud = new javax.swing.JLabel();
         lblDatosDelSolicitante = new javax.swing.JLabel();
         lblNombre = new javax.swing.JLabel();
         lblNombreSolicitante = new javax.swing.JLabel();
-        lblApellidoSolicitante = new javax.swing.JLabel();
         lblNumero = new javax.swing.JLabel();
         lblNumeroSolicitante = new javax.swing.JLabel();
-        lblSolicitud1 = new javax.swing.JLabel();
-        lblSolicitud2 = new javax.swing.JLabel();
+        lblFechaSolicitud = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
         lblEstatus = new javax.swing.JLabel();
         lblEstatusSolicitud = new javax.swing.JLabel();
         lblCorreo = new javax.swing.JLabel();
         lblCorreoSolicitante = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(26, 104, 53));
         setForeground(new java.awt.Color(26, 104, 53));
@@ -55,13 +59,13 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Folio:");
 
-        jTextField1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        txtFolio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         FondoHoja.setBackground(new java.awt.Color(255, 255, 255));
 
-        lblSolicitud.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblSolicitud.setForeground(new java.awt.Color(0, 0, 0));
-        lblSolicitud.setText("Solicitud:");
+        lblFolio.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblFolio.setForeground(new java.awt.Color(0, 0, 0));
+        lblFolio.setText("Folio");
 
         lblFolioSolicitud.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblFolioSolicitud.setForeground(new java.awt.Color(0, 0, 0));
@@ -87,10 +91,6 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
         lblNombreSolicitante.setForeground(new java.awt.Color(0, 0, 0));
         lblNombreSolicitante.setText("NombreSolicitante");
 
-        lblApellidoSolicitante.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblApellidoSolicitante.setForeground(new java.awt.Color(0, 0, 0));
-        lblApellidoSolicitante.setText("ApellidoSolicitante");
-
         lblNumero.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblNumero.setForeground(new java.awt.Color(0, 0, 0));
         lblNumero.setText("Numero de cuenta:");
@@ -99,19 +99,19 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
         lblNumeroSolicitante.setForeground(new java.awt.Color(0, 0, 0));
         lblNumeroSolicitante.setText("Numero de cuenta Solicitante");
 
-        lblSolicitud1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblSolicitud1.setForeground(new java.awt.Color(0, 0, 0));
-        lblSolicitud1.setText("FechaSolicitud");
+        lblFechaSolicitud.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblFechaSolicitud.setForeground(new java.awt.Color(0, 0, 0));
+        lblFechaSolicitud.setText("FechaSolicitud");
 
-        lblSolicitud2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        lblSolicitud2.setForeground(new java.awt.Color(0, 0, 0));
-        lblSolicitud2.setText("FechaSolicitud");
+        lblFecha.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
+        lblFecha.setText("Fecha");
 
-        lblEstatus.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblEstatus.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         lblEstatus.setForeground(new java.awt.Color(0, 0, 0));
-        lblEstatus.setText("Estatus:");
+        lblEstatus.setText("Estatus");
 
-        lblEstatusSolicitud.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblEstatusSolicitud.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblEstatusSolicitud.setForeground(new java.awt.Color(0, 0, 0));
         lblEstatusSolicitud.setText("EstatusSolicitud");
 
@@ -128,69 +128,67 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
         FondoHojaLayout.setHorizontalGroup(
             FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FondoHojaLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
                 .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoHojaLayout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(lblDatosDelSolicitante)
-                        .addGap(149, 149, 149))
                     .addGroup(FondoHojaLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addComponent(lblFolio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblFolioSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                        .addComponent(lblFecha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblFechaSolicitud)
+                        .addGap(41, 41, 41))
+                    .addGroup(FondoHojaLayout.createSequentialGroup()
                         .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(FondoHojaLayout.createSequentialGroup()
-                                .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblSolicitud)
-                                    .addComponent(lblAsunto))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblFolioSolicitud, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblAsuntoSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblSolicitud2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblSolicitud1))
+                                .addComponent(lblNombre)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblNombreSolicitante))
                             .addGroup(FondoHojaLayout.createSequentialGroup()
-                                .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(FondoHojaLayout.createSequentialGroup()
-                                        .addComponent(lblNombre)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblNombreSolicitante)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblApellidoSolicitante))
-                                    .addGroup(FondoHojaLayout.createSequentialGroup()
-                                        .addComponent(lblCorreo)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(lblCorreoSolicitante))
-                                    .addGroup(FondoHojaLayout.createSequentialGroup()
-                                        .addComponent(lblNumero)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblNumeroSolicitante))
-                                    .addGroup(FondoHojaLayout.createSequentialGroup()
-                                        .addComponent(lblEstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(33, 33, 33)
-                                        .addComponent(lblEstatusSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(166, 166, 166)))))
-                .addGap(46, 46, 46))
+                                .addComponent(lblCorreo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lblCorreoSolicitante))
+                            .addGroup(FondoHojaLayout.createSequentialGroup()
+                                .addComponent(lblNumero)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblNumeroSolicitante))
+                            .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblDatosDelSolicitante)
+                                .addGroup(FondoHojaLayout.createSequentialGroup()
+                                    .addComponent(lblAsunto)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lblAsuntoSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoHojaLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoHojaLayout.createSequentialGroup()
+                        .addComponent(lblEstatusSolicitud)
+                        .addGap(188, 188, 188))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FondoHojaLayout.createSequentialGroup()
+                        .addComponent(lblEstatus)
+                        .addGap(212, 212, 212))))
         );
         FondoHojaLayout.setVerticalGroup(
             FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FondoHojaLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblSolicitud)
+                    .addComponent(lblFolio)
                     .addComponent(lblFolioSolicitud)
-                    .addComponent(lblSolicitud1)
-                    .addComponent(lblSolicitud2))
-                .addGap(18, 18, 18)
+                    .addComponent(lblFechaSolicitud)
+                    .addComponent(lblFecha))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblAsunto)
                     .addComponent(lblAsuntoSolicitud))
-                .addGap(27, 27, 27)
+                .addGap(26, 26, 26)
                 .addComponent(lblDatosDelSolicitante)
-                .addGap(18, 18, 18)
+                .addGap(34, 34, 34)
                 .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre)
-                    .addComponent(lblNombreSolicitante)
-                    .addComponent(lblApellidoSolicitante))
+                    .addComponent(lblNombreSolicitante))
                 .addGap(18, 18, 18)
                 .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNumero)
@@ -199,15 +197,20 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
                 .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCorreo)
                     .addComponent(lblCorreoSolicitante))
-                .addGap(32, 32, 32)
-                .addGroup(FondoHojaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEstatus)
-                    .addComponent(lblEstatusSolicitud))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(lblEstatus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblEstatusSolicitud)
+                .addGap(46, 46, 46))
         );
 
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setText("Buscar");
+        btnBuscar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -217,13 +220,13 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
                 .addGap(141, 141, 141)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnBuscar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(FondoHoja, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FondoHoja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
@@ -232,21 +235,33 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(txtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
                 .addComponent(FondoHoja, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Solicitud s = Buscadores.findSolicitud(txtFolio.getText());
+        if (s != null) {
+            lblFolioSolicitud.setText(s.getFolio().getFolio());
+            lblFechaSolicitud.setText(s.getFechaDeSolicitud().format(DateTimeFormatter.ISO_LOCAL_DATE));
+            lblAsuntoSolicitud.setText(s.getAsunto());
+            lblNombreSolicitante.setText(s.getSolitante().getNombre().toString());
+            lblCorreoSolicitante.setText(s.getSolitante().getCorreo());
+            lblEstatusSolicitud.setText(s.getEstatus());
+            lblNumeroSolicitante.setText(s.getSolitante().getNumero());
+            
+        }
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FondoHoja;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnBuscar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblApellidoSolicitante;
     private javax.swing.JLabel lblAsunto;
     private javax.swing.JLabel lblAsuntoSolicitud;
     private javax.swing.JLabel lblCorreo;
@@ -254,13 +269,14 @@ public class ConsultarStatusPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblDatosDelSolicitante;
     private javax.swing.JLabel lblEstatus;
     private javax.swing.JLabel lblEstatusSolicitud;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblFechaSolicitud;
+    private javax.swing.JLabel lblFolio;
     private javax.swing.JLabel lblFolioSolicitud;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblNombreSolicitante;
     private javax.swing.JLabel lblNumero;
     private javax.swing.JLabel lblNumeroSolicitante;
-    private javax.swing.JLabel lblSolicitud;
-    private javax.swing.JLabel lblSolicitud1;
-    private javax.swing.JLabel lblSolicitud2;
+    private javax.swing.JTextField txtFolio;
     // End of variables declaration//GEN-END:variables
 }

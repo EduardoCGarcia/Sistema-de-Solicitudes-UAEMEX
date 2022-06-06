@@ -3,16 +3,20 @@ package Modelos.Genericos;
 import Modelos.Persona.Abstractos.Solicitante;
 import java.io.Serializable;
 import java.time.LocalDate;
+
 /**
  *
  * @author EduardoCGarcia
  */
-public class Solicitud implements Serializable{
+public class Solicitud implements Serializable {
+
     private String asunto;
     private Solicitante solitante;
     private LocalDate fechaDeSolicitud;
     private String estatus;
     private Folio folio;
+    private String respuesta;
+    private boolean estadoEmision;
 
     public Solicitud(String asunto, Solicitante solitante, Folio folio) {
         this.asunto = asunto;
@@ -20,7 +24,7 @@ public class Solicitud implements Serializable{
         this.folio = folio;
         this.estatus = "Pendiente";
         this.setFechaDeSolicitud();
-        
+
     }
 
     public Solicitud() throws Exception {
@@ -34,7 +38,7 @@ public class Solicitud implements Serializable{
     public void setFolio() {
         String cad = "";
     }
-    
+
     public String getAsunto() {
         return asunto;
     }
@@ -66,11 +70,22 @@ public class Solicitud implements Serializable{
     public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
-    
-    
-    
-    
-    
+
+    public String getRespuesta() {
+        return respuesta;
+    }
+
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
+    }
+
+    public boolean isEstadoEmision() {
+        return estadoEmision;
+    }
+
+    public void setEstadoEmision(boolean estadoEmision) {
+        this.estadoEmision = estadoEmision;
+    }
     
     
     
